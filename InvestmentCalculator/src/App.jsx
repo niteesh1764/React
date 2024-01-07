@@ -15,17 +15,17 @@ function handleChange(inputIdentifier, newValue){
   setUserInput(prevUserInput => {
       return{
       ...prevUserInput, 
-      [inputIdentifier] : newValue
-  }
-
+      [inputIdentifier] : +newValue
+    }
   })
 }
-
+const inputIsValid = userInput.duration >=1;
   return (
     <>
       <Header />
       <Inputer onInputChange = {handleChange} input = {userInput}/>
-      <Result input= {userInput}/>
+      {!inputIsValid && <p className="center">Please Enter Valid Duration</p>}
+      {inputIsValid && <Result input= {userInput}/>}
     </>
   )
 }
