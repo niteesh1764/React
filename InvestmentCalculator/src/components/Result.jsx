@@ -1,7 +1,7 @@
-export default function Result(){
+export default function Result({input}){
 
     return(
-        hi
+        console.log(input)
     )
 
 }
